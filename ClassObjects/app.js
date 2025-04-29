@@ -43,8 +43,9 @@
 
 //2nd exapmple inheritence
 class person{
-    contructor(){
+    contructor(name){
         this.species="Homo sepians";
+        this.name=name;
     }
     eat(){
         console.log("Eat");
@@ -59,8 +60,12 @@ class engineer extends person{
     }
 }
 class doctor extends person{
+    constructor(name){
+        super(name); //to involk parent class constructor
+    }
     work(){
+        super.eat();
         console.log("give treatements for health");
     }
 }
-let ParitoshObj=new engineer();
+let ParitoshObj=new engineer("paritosh");
